@@ -27,5 +27,13 @@ export const GlobalCss = createGlobalStyle`
   max-width: 1024px;
   width: 100%;
   margin: 0 auto;
+  padding: 0 16px;
+}
+
+@media (max-width: 768px) {
+  .container {
+    max-width: 100%;
+    padding: 0 8px;
+  }
 }
 `

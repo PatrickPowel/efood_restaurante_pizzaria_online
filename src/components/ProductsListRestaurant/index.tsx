@@ -1,12 +1,12 @@
-import Food from '../../Models/Food'
 import ProductRestaurant from '../ProductRestaurant'
 import { Container, List } from './styles'
+import Food from '../../Models/Food'
 
-export type Props = {
-  title: string
+type Props = {
+  title?: string
   background: 'salmon' | 'black'
   food: Food[]
-  onSelectProduct: (product: Food) => void // ✅ agora aceita instância da classe Food
+  onSelectProduct: (product: Food) => void
 }
 
 const ProductsListRestaurant = ({
@@ -18,22 +18,22 @@ const ProductsListRestaurant = ({
   <Container background={background}>
     <div className="container">
       {title && <h2>{title}</h2>}
+
       <List>
-        {food &&
-          food.map((item) => (
-            <ProductRestaurant
-              key={item.id}
-              id={item.id}
-              title={item.title}
-              description={item.description}
-              image={item.image}
-              infos={item.infos}
-              system={item.system}
-              nota={item.nota}
-              preco={item.preco ?? 0} // ✅ valor padrão
-              onSelect={onSelectProduct}
-            />
-          ))}
+        {food.map((item) => (
+          <ProductRestaurant
+            key={item.id}
+            id={item.id}
+            title={item.title}
+            description={item.description}
+            image={item.image}
+            infos={item.infos}
+            system={item.system}
+            nota={item.nota}
+            preco={item.preco}
+            onSelect={() => onSelectProduct(item)} // ✅ chama modal
+          />
+        ))}
       </List>
     </div>
   </Container>

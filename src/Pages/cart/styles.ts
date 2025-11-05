@@ -10,35 +10,21 @@ export const Container = styled.div`
     margin-bottom: 32px;
     text-align: center;
   }
-
-  .finalizar {
-    display: block;
-    margin: 40px auto 0;
-    background-color: #e66767;
-    color: #fff;
-    border: none;
-    border-radius: 8px;
-    padding: 16px 40px;
-    font-size: 18px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: 0.3s;
-
-    &:hover {
-      background-color: #cf5c5c;
-    }
-  }
 `
 
-export const CartItem = styled.div`
+export const ProductList = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+`
+
+export const ProductItem = styled.div`
   display: flex;
   align-items: center;
-  justify-content: space-between;
   background-color: #fff0f0;
   border-radius: 12px;
   padding: 20px;
-  margin-bottom: 20px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  justify-content: space-between;
 
   img {
     width: 100px;
@@ -55,26 +41,15 @@ export const CartItem = styled.div`
       color: #e66767;
       margin-bottom: 8px;
     }
-
-    p {
-      color: #555;
-      font-size: 14px;
-      margin-bottom: 6px;
-    }
-
-    strong {
-      color: #000;
-    }
   }
 
   button {
-    background-color: transparent;
     border: 2px solid #e66767;
-    color: #e66767;
-    border-radius: 6px;
+    background-color: transparent;
     padding: 8px 16px;
+    border-radius: 6px;
+    color: #e66767;
     cursor: pointer;
-    transition: 0.3s;
 
     &:hover {
       background-color: #e66767;
@@ -83,31 +58,41 @@ export const CartItem = styled.div`
   }
 `
 
-export const TotalSection = styled.div`
+export const Total = styled.div`
+  margin-top: 32px;
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  margin-top: 32px;
-  font-size: 18px;
+  font-size: 20px;
+  font-weight: bold;
 
-  p {
-    font-weight: bold;
-    color: #333;
-  }
-
-  strong {
-    font-size: 20px;
+  span {
     color: #e66767;
+  }
+`
+
+export const Button = styled.button`
+  width: 100%;
+  margin-top: 24px;
+  background-color: #e66767;
+  color: #fff;
+  border: none;
+  padding: 16px;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #c95a5a;
   }
 `
 
 export const EmptyCart = styled.div`
   text-align: center;
-  padding: 80px 20px;
-  color: #555;
+  padding: 80px 0;
 
   h2 {
     color: #e66767;
-    margin-bottom: 16px;
+    margin-bottom: 12px;
   }
 `

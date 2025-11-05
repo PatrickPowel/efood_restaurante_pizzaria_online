@@ -2,61 +2,56 @@ import { useSelector, useDispatch } from 'react-redux'
 import { RootState } from '../../store'
 import { removeFromCart, clearCart } from '../../store/reducers/carts'
 import Header from '../../components/Header'
-import { Container, CartItem, TotalSection, EmptyCart } from './styles'
+import { Container, ProductList, ProductItem, Total, Button } from './styles'
 
 const Cart = () => {
   const dispatch = useDispatch()
   const cartItems = useSelector((state: RootState) => state.cart.items)
 
-  // Soma total dos preços
-  const total = cartItems.reduce((sum, item) => sum + (item.preco || 0), 0)
-
-  if (cartItems.length === 0) {
-    return (
-      <>
-        <Header />
-        <EmptyCart>
-          <h2>Seu carrinho está vazio 😕</h2>
-          <p>Adicione alguns produtos deliciosos e volte aqui!</p>
-        </EmptyCart>
-      </>
-    )
-  }
+  // Soma dos preços
+  const total = cartItems
+    .reduce((acc: number, item: any) => acc + (item.preco || 0), 0)
+    .toFixed(2)
+    .replace('.', ',')
 
   return (
     <>
       <Header />
       <Container>
-        <h1>Seu Carrinho</h1>
+        <h2>Carrinho de Compras</h2>
 
-        {cartItems.map((item) => (
-          <CartItem key={item.id}>
-            <img src={item.image} alt={item.title} />
-            <div>
-              <h3>{item.title}</h3>
-              <p>{item.description}</p>
-              <strong>R$ {item.preco?.toFixed(2).replace('.', ',')}</strong>
-            </div>
-            <button onClick={() => dispatch(removeFromCart(item.id))}>
-              Remover
-            </button>
-          </CartItem>
-        ))}
+        {cartItems.length === 0 ? (
+          <p>Seu carrinho está vazio.</p>
+        ) : (
+          <>
+            <ProductList>
+              {cartItems.map((item: any) => (
+                <ProductItem key={item.id}>
+                  <img src={item.image} alt={item.title} />
+                  <div>
+                    <h3>{item.title}</h3>
+                    <p>{item.description}</p>
+                    <strong>
+                      <span>R$ {item.preco.toFixed(2).replace('.', ',')}</span>
+                    </strong>
+                    <button onClick={() => dispatch(removeFromCart(item.id))}>
+                      Remover
+                    </button>
+                  </div>
+                </ProductItem>
+              ))}
+            </ProductList>
 
-        <TotalSection>
-          <p>Total:</p>
-          <strong>R$ {total.toFixed(2).replace('.', ',')}</strong>
-        </TotalSection>
+            <Total>
+              <span>Total:</span>
+              <strong>R$ {total}</strong>
+            </Total>
 
-        <button
-          className="finalizar"
-          onClick={() => {
-            alert('Pedido finalizado com sucesso! 🍕')
-            dispatch(clearCart())
-          }}
-        >
-          Finalizar Pedido
-        </button>
+            <Button onClick={() => dispatch(clearCart())}>
+              Finalizar Pedido
+            </Button>
+          </>
+        )}
       </Container>
     </>
   )

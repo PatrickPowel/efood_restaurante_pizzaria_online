@@ -3,17 +3,30 @@ import styled from 'styled-components'
 export const Card = styled.div`
   background-color: #e66767;
   color: #fff;
-  border-radius: 8px;
-  padding: 8px;
+  border-radius: 1px;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   position: relative;
+  padding: 7px;
+  cursor: pointer;
 
   img {
     width: 100%;
     height: 180px;
     object-fit: cover;
-    border-radius: 8px;
+  }
+
+  @media (max-width: 1024px) {
+    img {
+      height: 160px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    img {
+      height: 200px;
+    }
   }
 `
 
@@ -68,12 +81,14 @@ export const Titulo = styled.h3`
   font-weight: bold;
   margin-top: 12px;
   margin-bottom: 8px;
+  padding: 5px;
 `
 
 export const Descricao = styled.p`
   font-size: 14px;
   line-height: 1.4;
   flex: 1;
+  padding: 5px;
 `
 
 // ✅ Botão com visual igual ao modal

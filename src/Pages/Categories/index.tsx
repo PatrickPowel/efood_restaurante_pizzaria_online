@@ -1,3 +1,4 @@
+import Header from '../../components/Header'
 import ProductsList from '../../components/ProductsList'
 import Food from '../../Models/Food'
 
@@ -15,9 +16,8 @@ const promocoes: Food[] = [
     infos: ['Destaque da semana', 'Japonesa'],
     image: suschi,
     nota: 4.9,
-    preco: 65.0 // ✅ adiciona um valor numérico aqui
+    preco: 65.0
   },
-
   {
     id: 2,
     description:
@@ -26,10 +26,9 @@ const promocoes: Food[] = [
     system: 'Saiba Mais!',
     infos: ['15%', 'R$ 65,00'],
     image: macarrao,
-    nota: 0,
-    preco: 80.0 // ✅ adiciona também aqui
+    nota: 4.0,
+    preco: 80.0
   },
-
   {
     id: 3,
     description:
@@ -38,10 +37,9 @@ const promocoes: Food[] = [
     system: 'Saiba Mais!',
     infos: ['15%', 'R$ 65,00'],
     image: suschi,
-    nota: 0,
-    preco: 55.0 // ✅
+    nota: 4.9,
+    preco: 55.0
   },
-
   {
     id: 4,
     description:
@@ -50,8 +48,8 @@ const promocoes: Food[] = [
     system: 'Saiba Mais!',
     infos: ['15%', 'R$ 65,00'],
     image: pizza,
-    nota: 0,
-    preco: 45.0 // ✅
+    nota: 4.3,
+    preco: 45.0
   }
 ]
 
@@ -64,22 +62,20 @@ const emBreve: Food[] = [
     system: 'Saiba mais!',
     infos: ['19/08'],
     image: macarrao,
-    nota: 0,
-    preco: 65.0 // ✅
+    nota: 4.8,
+    preco: 65.0
   },
-
   {
     id: 6,
     description:
-      'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!',
+      'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade! Entrega rápida, embalagens cuidadosas e qualidade garantida.Experimente o Japão sem sair do lar com nosso delivery!',
     title: 'Pizza',
     system: 'Saiba mais!',
     infos: ['19/08'],
     image: pizza,
-    nota: 0,
-    preco: 50.0 // ✅
+    nota: 4.7,
+    preco: 50.0
   },
-
   {
     id: 7,
     description:
@@ -88,40 +84,44 @@ const emBreve: Food[] = [
     system: 'Saiba mais!',
     infos: ['19/08'],
     image: macarrao,
-    nota: 0,
-    preco: 65.0 // ✅
+    nota: 4.8,
+    preco: 65.0
   },
-
   {
     id: 8,
     description:
-      'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!',
+      'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade! Entrega rápida, embalagens cuidadosas e qualidade garantida.Experimente o Japão sem sair do lar com nosso delivery!',
     title: 'Pizza',
     system: 'Saiba mais!',
     infos: ['19/08'],
     image: pizza,
     nota: 4.9,
-    preco: 50.0 // ✅
+    preco: 50.0
   }
 ]
 
 const Categories = () => (
   <>
-    <ProductsList
-      food={promocoes}
-      title="Pratos Especais"
-      background="salmon"
-    />
+    <Header />
 
-    <ProductsList food={emBreve} title="Especial do dia" background="black" />
-
-    <ProductsList
-      food={promocoes}
-      title="Promoções especiais"
-      background="salmon"
-    />
-
-    <ProductsList food={emBreve} title="Prato Recomendado" background="black" />
+    <div className="container">
+      <ProductsList
+        food={promocoes}
+        title="Pratos Especiais"
+        background="salmon"
+      />
+      <ProductsList food={emBreve} title="Especial do dia" background="black" />
+      <ProductsList
+        food={promocoes}
+        title="Promoções especiais"
+        background="salmon"
+      />
+      <ProductsList
+        food={emBreve}
+        title="Prato Recomendado"
+        background="black"
+      />
+    </div>
   </>
 )
 

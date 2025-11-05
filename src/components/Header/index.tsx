@@ -7,28 +7,31 @@ import Logo from '../../assets/images/logo.png'
 import Carrinho from '../../assets/images/carrinho.png'
 
 const Header = () => {
-  // 🔹 Lendo a quantidade de itens diretamente do Redux
+  // Lê o número de produtos do carrinho via Redux
   const cartCount = useSelector((state: RootState) => state.cart.items.length)
 
   return (
     <HeaderBar>
-      <nav>
-        <Links>
-          <LinkItem>
-            <Link to="/categories">Categorias</Link>
-          </LinkItem>
-        </Links>
-      </nav>
+      {/* Container interno centralizado */}
+      <div className="content">
+        <nav>
+          <Links>
+            <LinkItem>
+              <Link to="/categories">Categorias</Link>
+            </LinkItem>
+          </Links>
+        </nav>
 
-      <Link to="/">
-        <img src={Logo} alt="logo efood" />
-      </Link>
+        <Link to="/">
+          <img src={Logo} alt="logo efood" />
+        </Link>
 
-      {/* 🔹 Contador do carrinho dinâmico */}
-      <LinkCart as={Link} to="/cart">
-        {cartCount} - Produto{cartCount !== 1 ? 's' : ''}
-        <img src={Carrinho} alt="carrinho de compras" />
-      </LinkCart>
+        {/* Contador dinâmico do carrinho */}
+        <LinkCart as={Link} to="/cart">
+          {cartCount} - Produto{cartCount !== 1 ? 's' : ''}
+          <img src={Carrinho} alt="carrinho de compras" />
+        </LinkCart>
+      </div>
     </HeaderBar>
   )
 }

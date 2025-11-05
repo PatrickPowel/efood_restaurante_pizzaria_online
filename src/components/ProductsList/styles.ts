@@ -1,27 +1,36 @@
 import styled from 'styled-components'
 
-import { Props } from '.'
-import { cores } from '../../styles'
-import { Card } from '../Product/styles'
+export const Container = styled.div<{ background: string }>`
+  background-color: #fff8f2;
+  padding: 24px 0;
+  margin-top: 16px;
 
-export const Container = styled.section<Omit<Props, 'title' | 'food'>>`
-  padding: 32px 0;
-  background-color: ${(props) =>
-    props.background === 'black' ? cores.corDeFundoHome : cores.corDeFundoHome};
-  border: 0px;
-  width: 1024px;
-  margin: 0 auto;
+  .container {
+    max-width: 1024px;
+    margin: 0 auto;
+    padding: 0 16px; /* melhora alinhamento no mobile */
+  }
+
+  @media (max-width: 768px) {
+    padding: 8px 0;
+
+    .container {
+      padding: 0 8px; /* borda mínima lateral igual restaurante */
+      max-width: 100%; /* ocupa toda tela */
+    }
+  }
 `
 
-export const List = styled.ul`
+export const List = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr;
   gap: 24px;
-  margin-top: 40px;
-  justify-items: center;
-`
+  grid-template-columns: repeat(2, 1fr);
 
-export const Title = styled.h2`
-  font-size: 18px;
-  font-weight: bold;
+  @media (max-width: 1024px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
 `

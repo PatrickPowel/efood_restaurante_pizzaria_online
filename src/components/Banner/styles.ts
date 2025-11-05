@@ -3,7 +3,7 @@ import { cores } from '../../styles'
 
 export const Imagem = styled.div`
   width: 100%;
-  height: 440px;
+  height: 320px;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -11,6 +11,7 @@ export const Imagem = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding-top: 0; /* remove espaço extra */
 
   p {
     color: ${cores.corSalmao};
@@ -22,7 +23,16 @@ export const Imagem = styled.div`
   }
 
   .container {
-    margin-top: 24px;
+    margin-top: 0; /* elimina espaçamento errado */
+    width: 100%;
+  }
+
+  @media (max-width: 768px) {
+    height: 300px;
+    p {
+      font-size: 20px;
+      max-width: 90%;
+    }
   }
 `
 
