@@ -5,10 +5,19 @@ export const Container = styled.div`
   margin: 80px auto;
   padding: 20px;
 
-  h1 {
-    color: #e66767;
+  h1,
+  h2 {
+    color: #e66767 !important;
     margin-bottom: 32px;
     text-align: center;
+    font-weight: bold;
+  }
+
+  p {
+    color: #e66767; /* agora o texto do carrinho vazio fica visível */
+    text-align: center;
+    font-weight: 500;
+    margin-top: 16px;
   }
 `
 
@@ -21,7 +30,7 @@ export const ProductList = styled.div`
 export const ProductItem = styled.div`
   display: flex;
   align-items: center;
-  background-color: #fff0f0;
+  background-color: #e66767;
   border-radius: 12px;
   padding: 20px;
   justify-content: space-between;
@@ -38,22 +47,34 @@ export const ProductItem = styled.div`
     margin-left: 16px;
 
     h3 {
-      color: #e66767;
+      color: #fff; /* ajustado para melhor contraste dentro do fundo salmão */
       margin-bottom: 8px;
+    }
+
+    p {
+      color: #fff;
+      font-size: 14px;
+    }
+
+    strong {
+      display: block;
+      margin-top: 4px;
+      color: #fff;
     }
   }
 
   button {
-    border: 2px solid #e66767;
+    border: 2px solid #fff;
     background-color: transparent;
     padding: 8px 16px;
     border-radius: 6px;
-    color: #e66767;
+    color: #fff;
     cursor: pointer;
+    transition: 0.3s;
 
     &:hover {
-      background-color: #e66767;
-      color: #fff;
+      background-color: #fff;
+      color: #e66767;
     }
   }
 `
@@ -81,6 +102,7 @@ export const Button = styled.button`
   font-size: 18px;
   font-weight: bold;
   cursor: pointer;
+  transition: 0.3s;
 
   &:hover {
     background-color: #c95a5a;
