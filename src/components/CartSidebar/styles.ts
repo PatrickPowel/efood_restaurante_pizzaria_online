@@ -62,7 +62,7 @@ export const Sidebar = styled.aside`
 export const CartItem = styled.div`
   display: flex;
   align-items: center;
-  background-color: #FFF8F2;
+  background-color: #fff8f2;
   color: ${cores.corSalmao};
   border-radius: 8px;
   margin-bottom: 16px;
@@ -128,5 +128,3 @@ export const Button = styled.button`
     background-color: #f8dcdc;
   }
 `
-
-

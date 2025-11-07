@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import { cores } from '../../styles'
 
 export const HeaderBar = styled.header`
-  background-color: #FFEBD9; /* Fundo claro igual ao Figma */
+  background-color: #ffebd9; /* Fundo claro igual ao Figma */
   padding: 16px 0;
 
   .content {
