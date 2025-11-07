@@ -25,7 +25,7 @@ export const LinkItem = styled.li`
   margin-right: 16px;
 
   a {
-    color: #fff;
+    color: #e66767;
     text-decoration: none;
     font-weight: bold;
 
@@ -41,7 +41,7 @@ export const LinkCart = styled.button`
   gap: 8px;
   background: transparent;
   border: none;
-  color: #fff;
+  color: #e66767;
   font-weight: bold;
   cursor: pointer;
 
