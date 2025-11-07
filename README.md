@@ -15,11 +15,11 @@ O objetivo é reproduzir fielmente o layout do **Figma** do curso da EBAC, crian
 
 ## 🛠️ Tecnologias utilizadas
 
-- React.js  
-- TypeScript  
-- Styled Components  
-- Redux Toolkit  
-- React Router DOM  
+- React.js
+- TypeScript
+- Styled Components
+- Redux Toolkit
+- React Router DOM
 - ESLint + Prettier
 
 ## 📦 Scripts disponíveis
@@ -27,13 +27,15 @@ O objetivo é reproduzir fielmente o layout do **Figma** do curso da EBAC, crian
 No diretório do projeto, você pode executar:
 
 ### `npm start`
+
 Executa o app em modo de desenvolvimento  
 Acesse [http://localhost:3000](http://localhost:3000)
 
 ### `npm run build`
+
 Gera a versão otimizada de produção
 
 ---
 
 **Autor:** [Patrick Willians Powel](https://github.com/PatrickPowel)  
-📍 *Projeto finalizado e publicado via Vercel.*
+📍 _Projeto finalizado e publicado via Vercel._

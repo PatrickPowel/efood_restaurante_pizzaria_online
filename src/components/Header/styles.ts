@@ -2,76 +2,50 @@ import styled from 'styled-components'
 import { cores } from '../../styles'
 
 export const HeaderBar = styled.header`
-  background-color: ${cores.corDePeleFundo};
-  width: 100%;
-  padding: 24px 0;
-  display: flex;
-  justify-content: center;
+  background-color: #FFEBD9; /* Fundo claro igual ao Figma */
+  padding: 16px 0;
 
-  /* Conteúdo centralizado dentro do fundo que preenche toda a largura */
   .content {
-    max-width: 1024px;
-    width: 100%;
+    width: 1024px;
+    margin: 0 auto;
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    padding: 0 24px;
-  }
-
-  a {
-    color: ${cores.corSalmao};
-    text-decoration: none;
-    font-weight: bold;
-    transition: 0.3s;
-
-    &:hover {
-      color: #cf5c5c;
-    }
-  }
-
-  img {
-    max-width: 80px;
-  }
-
-  @media (max-width: 1024px) {
-    .content {
-      padding: 0 16px;
-    }
-
-    img {
-      max-width: 70px;
-    }
-  }
-
-  @media (max-width: 768px) {
-    .content {
-      flex-direction: column;
-      gap: 8px;
-      justify-content: center;
-    }
-
-    img {
-      max-width: 60px;
-    }
+    align-items: center;
   }
 `
 
 export const Links = styled.ul`
   display: flex;
-  align-items: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 `
 
 export const LinkItem = styled.li`
   margin-right: 16px;
+
+  a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 `
 
-export const LinkCart = styled.a`
+export const LinkCart = styled.button`
   display: flex;
   align-items: center;
-  font-size: 14px;
+  gap: 8px;
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
 
   img {
-    margin-left: 8px;
     width: 24px;
     height: 24px;
   }
