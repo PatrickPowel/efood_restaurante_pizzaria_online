@@ -69,7 +69,6 @@ const Restaurant = () => {
     <>
       <Header />
       <BannerRestaurant image={restaurant.capa} />
-
       <div className="container">
         <ProductsListRestaurant
           title=""
@@ -78,7 +77,6 @@ const Restaurant = () => {
           onSelectProduct={openModal}
         />
       </div>
-
       <ModalProduct
         isOpen={!!selectedProduct}
         product={selectedProduct}
