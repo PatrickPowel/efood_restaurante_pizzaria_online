@@ -74,7 +74,7 @@ const Restaurant = () => {
         <ProductsListRestaurant
           title=""
           background="salmon"
-          food={restaurant.cardapio.slice(0, 6)}
+          food={restaurant.cardapio.slice(0, 6)}  // <--- LIMITADO A 6
           onSelectProduct={openModal}
         />
       </div>
