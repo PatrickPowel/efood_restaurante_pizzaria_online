@@ -1,18 +1,22 @@
 import { useSelector, useDispatch } from 'react-redux'
 import { RootState } from '../../store'
-import { removeFromCart, clearCart } from '../../store/reducers/carts'
+import { removeFromCart } from '../../store/reducers/carts'
 import Header from '../../components/Header'
 import { Container, ProductList, ProductItem, Total, Button } from './styles'
+import { useNavigate } from 'react-router-dom'
 
 const Cart = () => {
   const dispatch = useDispatch()
+  const navigate = useNavigate()
   const cartItems = useSelector((state: RootState) => state.cart.items)
 
-  // Soma dos preços
   const total = cartItems
     .reduce((acc: number, item: any) => acc + (item.preco || 0), 0)
     .toFixed(2)
     .replace('.', ',')
+
+  // GRAVA carrinho no localStorage para a tela pagamento
+  localStorage.setItem('carrinho', JSON.stringify(cartItems))
 
   return (
     <>
@@ -34,6 +38,7 @@ const Cart = () => {
                     <strong>
                       <span>R$ {item.preco.toFixed(2).replace('.', ',')}</span>
                     </strong>
+
                     <button onClick={() => dispatch(removeFromCart(item.id))}>
                       Remover
                     </button>
@@ -47,7 +52,7 @@ const Cart = () => {
               <strong>R$ {total}</strong>
             </Total>
 
-            <Button onClick={() => dispatch(clearCart())}>
+            <Button onClick={() => navigate('/entrega')}>
               Finalizar Pedido
             </Button>
           </>

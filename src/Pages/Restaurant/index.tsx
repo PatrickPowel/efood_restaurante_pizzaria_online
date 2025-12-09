@@ -77,11 +77,16 @@ const Restaurant = () => {
           onSelectProduct={openModal}
         />
       </div>
-      <ModalProduct
-        isOpen={!!selectedProduct}
-        product={selectedProduct}
-        onClose={closeModal}
-      />
+      {selectedProduct && (
+        <ModalProduct
+          title={selectedProduct.title}
+          image={selectedProduct.image}
+          description={selectedProduct.description}
+          porcao={selectedProduct.infos.join(', ')}
+          preco={selectedProduct.preco}
+          closeModal={closeModal}
+        />
+      )}
     </>
   )
 }

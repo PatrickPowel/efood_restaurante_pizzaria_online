@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { cores } from '../../styles'
 
 export const ModalOverlay = styled.div`
   position: fixed;
@@ -6,73 +7,46 @@ export const ModalOverlay = styled.div`
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.6);
   display: flex;
-  align-items: center;
   justify-content: center;
-  z-index: 1000;
+  align-items: center;
+  z-index: 100;
 `
 
 export const ModalContent = styled.div`
-  background: #ffeadd;
+  background: ${cores.corDePeleFundo};
+  padding: 24px;
+  width: 420px;
   border-radius: 8px;
-  padding: 20px;
-  width: 90%;
-  max-width: 600px;
-  display: flex;
-  flex-direction: column;
-  color: #e66767;
   position: relative;
+  color: #000;
 
   img {
     width: 100%;
-    height: 240px;
-    object-fit: cover;
-    border-radius: 8px;
-    margin-bottom: 16px;
+    border-radius: 6px;
+    margin-bottom: 12px;
   }
 
-  .close {
+  .close-btn {
     position: absolute;
     top: 8px;
-    right: 12px;
+    right: 8px;
     background: none;
     border: none;
-    font-size: 20px;
-    color: #e66767;
+    font-size: 18px;
     cursor: pointer;
-  }
-
-  h2 {
-    font-size: 24px;
-    margin-bottom: 8px;
-  }
-
-  p {
-    font-size: 14px;
-    line-height: 1.4;
-  }
-
-  .serving {
-    margin-top: 8px;
-    font-style: italic;
   }
 `
 
 export const Button = styled.button`
-  background-color: #e66767;
+  background: ${cores.corSalmao};
   color: #fff;
   border: none;
-  font-weight: bold;
-  font-size: 14px;
-  padding: 12px;
+  padding: 10px;
   width: 100%;
-  border-radius: 8px;
-  margin-top: 16px;
+  margin-top: 12px;
+  border-radius: 4px;
   cursor: pointer;
-  transition: all 0.3s ease;
-
-  &:hover {
-    background-color: #d15858;
-  }
+  font-weight: bold;
 `
