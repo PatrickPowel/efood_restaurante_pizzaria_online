@@ -7,7 +7,7 @@ export const Overlay = styled.div`
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.3s ease;
-  z-index: 9998;  /* Mantém abaixo do sidebar */
+  z-index: 9998; /* Mantém abaixo do sidebar */
 
   &.visible {
     opacity: 1;
@@ -44,7 +44,7 @@ export const Sidebar = styled.aside`
     width: 6px;
   }
   &::-webkit-scrollbar-thumb {
-    background: rgba(255,255,255,0.4);
+    background: rgba(255, 255, 255, 0.4);
     border-radius: 4px;
   }
 
@@ -141,8 +141,8 @@ export const Total = styled.div`
   padding: 12px 0;
   font-weight: 700;
   color: #fff;
-  border-top: 2px solid rgba(255,255,255,0.25);
-  border-bottom: 2px solid rgba(255,255,255,0.25);
+  border-top: 2px solid rgba(255, 255, 255, 0.25);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.25);
 `
 
 export const Button = styled.button`

@@ -168,14 +168,10 @@ const CartSidebar = ({ isOpen, onClose }: Props) => {
               placeholder="Complemento (opcional)"
               name="complement"
               value={deliveryData.complement}
-              onChange={(e) =>
-                updateDelivery('complement', e.target.value)
-              }
+              onChange={(e) => updateDelivery('complement', e.target.value)}
             />
 
-            <Button onClick={goToPayment}>
-              Continuar com o pagamento
-            </Button>
+            <Button onClick={goToPayment}>Continuar com o pagamento</Button>
 
             <Button onClick={() => dispatch(changeStep('cart'))}>
               Voltar para o carrinho
@@ -212,10 +208,7 @@ const CartSidebar = ({ isOpen, onClose }: Props) => {
                 maxLength={3}
                 value={paymentData.cvv}
                 onChange={(e) =>
-                  updatePayment(
-                    'cvv',
-                    formatOnlyDigits(e.target.value, 3)
-                  )
+                  updatePayment('cvv', formatOnlyDigits(e.target.value, 3))
                 }
               />
 
@@ -225,10 +218,7 @@ const CartSidebar = ({ isOpen, onClose }: Props) => {
                 maxLength={2}
                 value={paymentData.month}
                 onChange={(e) =>
-                  updatePayment(
-                    'month',
-                    formatOnlyDigits(e.target.value, 2)
-                  )
+                  updatePayment('month', formatOnlyDigits(e.target.value, 2))
                 }
               />
 
@@ -238,10 +228,7 @@ const CartSidebar = ({ isOpen, onClose }: Props) => {
                 maxLength={2}
                 value={paymentData.year}
                 onChange={(e) =>
-                  updatePayment(
-                    'year',
-                    formatOnlyDigits(e.target.value, 2)
-                  )
+                  updatePayment('year', formatOnlyDigits(e.target.value, 2))
                 }
               />
             </Row>
