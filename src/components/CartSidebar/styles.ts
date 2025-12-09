@@ -1,106 +1,136 @@
 import styled from 'styled-components'
-import { cores } from '../../styles'
 
 export const Overlay = styled.div`
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.5);
-  visibility: hidden;
+  background: rgba(0, 0, 0, 0.55);
   opacity: 0;
-  transition: all 0.3s ease;
-  z-index: 10;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 9998;  /* Mantém abaixo do sidebar */
 
   &.visible {
-    visibility: visible;
     opacity: 1;
+    pointer-events: auto;
   }
 `
 
 export const Sidebar = styled.aside`
   position: fixed;
   top: 0;
-  right: -400px;
-  width: 400px;
-  height: 100%;
-  background-color: ${cores.corSalmao};
-  padding: 24px;
+  right: 0;
+  height: 100vh;
+  width: 380px;
+  background: #e66767;
+  padding: 30px;
   display: flex;
   flex-direction: column;
-  transition: all 0.4s ease;
-  z-index: 11;
+  gap: 14px;
 
-  &.open {
-    right: 0;
+  transform: translateX(100%);
+  transition: 0.35s ease;
+
+  /* 🔥 SEMPRE POR CIMA */
+  z-index: 9999;
+
+  /* Premium shadow */
+  box-shadow: -6px 0 18px rgba(0, 0, 0, 0.25);
+
+  /* Scroll suave dentro do painel */
+  overflow-y: auto;
+
+  /* Barra de scroll minimal */
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: rgba(255,255,255,0.4);
+    border-radius: 4px;
   }
 
-  .topo {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 24px;
+  &.open {
+    transform: translateX(0);
+  }
 
-    h3 {
-      color: #fff;
-      font-size: 22px;
+  h3 {
+    color: #fff;
+    margin-bottom: 10px;
+    font-size: 20px;
+    font-weight: 600;
+  }
+
+  p {
+    font-size: 14px;
+    color: #fff;
+    line-height: 18px;
+  }
+
+  input {
+    background: #ffecd5;
+    border: none;
+    padding: 10px 12px;
+    font-size: 13px;
+    width: 100%;
+    border-radius: 4px;
+    outline: none;
+    margin-bottom: 10px;
+
+    /* Placeholder melhorado */
+    &::placeholder {
+      color: #9d6b6b;
+      opacity: 0.8;
+      font-size: 12px;
     }
 
-    .close-btn {
-      background: transparent;
-      border: none;
-      color: #fff;
-      cursor: pointer;
-      transition: 0.3s;
-
-      &:hover {
-        transform: scale(1.1);
-        color: #ffebc1;
-      }
+    /* Efeito de foco premium */
+    &:focus {
+      border: 2px solid rgba(255, 255, 255, 0.7);
+      background: #ffe6c9;
     }
   }
 `
 
 export const CartItem = styled.div`
   display: flex;
+  gap: 10px;
   align-items: center;
-  background-color: #fff8f2;
-  color: ${cores.corSalmao};
-  border-radius: 8px;
-  margin-bottom: 16px;
+  background: #ffecd5;
   padding: 10px;
+  border-radius: 4px;
+  margin-bottom: 10px;
 
   img {
-    width: 60px;
-    height: 60px;
-    border-radius: 8px;
-    margin-right: 10px;
+    width: 55px;
+    height: 55px;
     object-fit: cover;
+    border-radius: 4px;
   }
 
   div {
     display: flex;
     flex-direction: column;
+  }
 
-    strong {
-      font-size: 16px;
-    }
+  strong {
+    font-size: 14px;
+    margin-bottom: 2px;
+  }
 
-    span {
-      font-size: 14px;
-      margin-bottom: 4px;
-    }
+  span {
+    font-size: 13px;
+    color: #333;
+  }
 
-    button {
-      background: transparent;
-      border: 1px solid ${cores.corSalmao};
-      color: ${cores.corSalmao};
-      border-radius: 6px;
-      padding: 4px 8px;
-      cursor: pointer;
+  button {
+    background: transparent;
+    border: none;
+    color: #e66767;
+    font-size: 12px;
+    cursor: pointer;
+    margin-top: 4px;
 
-      &:hover {
-        background: ${cores.corSalmao};
-        color: #fff;
-      }
+    &:hover {
+      text-decoration: underline;
     }
   }
 `
@@ -108,23 +138,41 @@ export const CartItem = styled.div`
 export const Total = styled.div`
   display: flex;
   justify-content: space-between;
+  padding: 12px 0;
+  font-weight: 700;
   color: #fff;
-  font-size: 18px;
-  margin-top: 12px;
+  border-top: 2px solid rgba(255,255,255,0.25);
+  border-bottom: 2px solid rgba(255,255,255,0.25);
 `
 
 export const Button = styled.button`
-  margin-top: 20px;
+  width: 100%;
   padding: 12px;
+  background: #ffecd5;
+  color: #e66767;
   border: none;
-  border-radius: 8px;
-  background-color: #fff;
-  color: ${cores.corSalmao};
-  font-weight: bold;
+  font-size: 14px;
+  border-radius: 4px;
   cursor: pointer;
-  transition: 0.3s;
+  font-weight: 600;
+  transition: 0.2s ease;
 
   &:hover {
-    background-color: #f8dcdc;
+    background: #ffe1c4;
+  }
+
+  &:active {
+    background: #f9d7b7;
+    transform: scale(0.98);
+  }
+`
+
+/* CEP + Número lado a lado */
+export const Row = styled.div`
+  display: flex;
+  gap: 8px;
+
+  input {
+    flex: 1;
   }
 `
