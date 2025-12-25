@@ -4,6 +4,7 @@ import { RootState } from '../../store'
 import { removeFromCart, clearCart } from '../../store/reducers/carts'
 import { changeStep } from '../../store/reducers/ui'
 import { Sidebar, Overlay, CartItem, Total, Button, Row } from './styles'
+import { FaTrashAlt } from 'react-icons/fa'
 
 type Props = {
   isOpen: boolean
@@ -152,8 +153,11 @@ const CartSidebar = ({ isOpen, onClose }: Props) => {
                     <div>
                       <strong>{item.title}</strong>
                       <span>R$ {item.preco.toFixed(2).replace('.', ',')}</span>
-                      <button onClick={() => dispatch(removeFromCart(item.id))}>
-                        Remover
+                      <button
+                        onClick={() => dispatch(removeFromCart(item.id))}
+                        aria-label="Remover item"
+                      >
+                        <FaTrashAlt />
                       </button>
                     </div>
                   </CartItem>

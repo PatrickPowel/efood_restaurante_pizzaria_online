@@ -114,25 +114,32 @@ export const CartItem = styled.div`
   strong {
     font-size: 14px;
     margin-bottom: 2px;
+    color: #E66767;
   }
 
   span {
     font-size: 13px;
-    color: #333;
+    color: #E66767;
   }
 
   button {
-    background: transparent;
-    border: none;
-    color: #e66767;
-    font-size: 12px;
-    cursor: pointer;
-    margin-top: 4px;
+  background: transparent;
+  border: none;
+  color: #e66767;
+  cursor: pointer;
+  margin-top: 4px;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
 
-    &:hover {
-      text-decoration: underline;
-    }
+  svg {
+    font-size: 14px;
   }
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
 `
 
 export const Total = styled.div`
