@@ -10,8 +10,12 @@ const promocoes: Food[] = [
   {
     id: 1,
     description:
+<<<<<<< HEAD
       'Peça já o melhor da culinária japonesa no conforto da sua casa! Sushis frescos, sashimis deliciosos e pratos quentes irresistíveis. Entrega rápida, embalagens cuidadosas e qualidade garantida.Experimente o Japão sem sair do lar com nosso delivery!',
     title: 'Hioki Sushi',
+=======
+      'Peça já o melhor da culinária japonesa no conforto da sua casa! Sushis frescos, sashimis deliciosos e pratos quentes irresistíveis,  tudo no conforto do seu lar. Entrega rápida, pratos bem embalados e sabor inesquecível. Peça já!',
+>>>>>>> cd0fc97 (Atualizando validações de campo e chamada de POST em API)
     system: 'Saiba Mais!',
     infos: ['Destaque da semana', 'Japonesa'],
     image: suschi,
@@ -23,7 +27,10 @@ const promocoes: Food[] = [
     id: 2,
     description:
       'A La Dolce Vita Trattoria leva a autêntica cozinha italiana até você! Desfrute de massas caseiras, pizzas deliciosas e risotos incríveis, tudo no conforto do seu lar. Entrega rápida, pratos bem embalados e sabor inesquecível. Peça já!',
+<<<<<<< HEAD
     title: 'La Dolce Vita Trattoria',
+=======
+>>>>>>> cd0fc97 (Atualizando validações de campo e chamada de POST em API)
     system: 'Saiba Mais!',
     infos: ['Italiana'],
     image: macarrao,
@@ -32,15 +39,23 @@ const promocoes: Food[] = [
   },
 
   {
+<<<<<<< HEAD
     id: 3,
     description:
       'A La Dolce Vita Trattoria leva a autêntica cozinha italiana até você! Desfrute de massas caseiras, pizzas deliciosas e risotos incríveis, tudo no conforto do seu lar. Entrega rápida, pratos bem embalados e sabor inesquecível. Peça já!',
     title: 'La Dolce Vita Trattoria',
+=======
+    id: 2,
+    title: 'La Dolce Vita Trattoria',
+    description:
+      'A La Dolce Vita Trattoria leva a autêntica cozinha italiana até você! Desfrute de massas caseiras, pizzas deliciosas e risotos incríveis, tudo no conforto do seu lar. Entrega rápida, pratos bem embalados e sabor inesquecível. Peça já!',
+>>>>>>> cd0fc97 (Atualizando validações de campo e chamada de POST em API)
     system: 'Saiba Mais!',
     infos: ['Italiana'],
     image: macarrao,
     nota: 4.6,
-    preco: 65.0 // <-- adicione isso em todos
+<<<<<<< HEAD
+    preco: 65.0 
   },
 
   {
@@ -52,7 +67,7 @@ const promocoes: Food[] = [
     infos: ['Italiana'],
     image: macarrao,
     nota: 4.9,
-    preco: 65.0 // <-- adicione isso em todos
+    preco: 65.0 
   },
   {
     id: 5,
@@ -63,7 +78,7 @@ const promocoes: Food[] = [
     infos: ['Italiana'],
     image: macarrao,
     nota: 4.9,
-    preco: 65.0 // <-- adicione isso em todos
+    preco: 65.0 
   },
   {
     id: 6,
@@ -74,8 +89,44 @@ const promocoes: Food[] = [
     infos: ['Italiana'],
     image: macarrao,
     nota: 4.9,
-    preco: 65.0 // <-- adicione isso em todos
-  }
+    preco: 65.0 
+  },
+=======
+  {
+    id: 2,
+    title: 'La Dolce Vita Trattoria',
+    description:
+      'A La Dolce Vita Trattoria leva a autêntica cozinha italiana até você! Desfrute de massas caseiras, pizzas deliciosas e risotos incríveis, tudo no conforto do seu lar. Entrega rápida, pratos bem embalados e sabor inesquecível. Peça já!',
+    system: 'Saiba Mais!',
+    infos: ['Italiana'],
+    image: macarrao,
+    nota: 4.6,
+    preco: 65
+  },
+  {
+    id: 2,
+    title: 'La Dolce Vita Trattoria',
+    description:
+      'A La Dolce Vita Trattoria leva a autêntica cozinha italiana até você! Desfrute de massas caseiras, pizzas deliciosas e risotos incríveis, tudo no conforto do seu lar. Entrega rápida, pratos bem embalados e sabor inesquecível. Peça já!',
+    system: 'Saiba Mais!',
+    infos: ['Italiana'],
+    image: macarrao,
+    nota: 4.6,
+    preco: 65
+  },
+  {
+    id: 2,
+    title: 'La Dolce Vita Trattoria',
+    description:
+      'Peça já o melhor da culinária japonesa no conforto da sua casa! Sushis frescos, sashimis deliciosos e pratos quentes irresistíveis. Entrega rápida, embalagens cuidadosas e qualidade garantida.Experimente o Japão sem sair do lar com nosso delivery!',
+    system: 'Saiba Mais!',
+    infos: ['Italiana'],
+    image: macarrao,
+    nota: 4.6,
+    preco: 65
+  },
+  
+>>>>>>> cd0fc97 (Atualizando validações de campo e chamada de POST em API)
 ]
 
 const Home = () => (

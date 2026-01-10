@@ -114,32 +114,32 @@ export const CartItem = styled.div`
   strong {
     font-size: 14px;
     margin-bottom: 2px;
-    color: #E66767;
+    color: #e66767;
   }
 
   span {
     font-size: 13px;
-    color: #E66767;
+    color: #e66767;
   }
 
   button {
-  background: transparent;
-  border: none;
-  color: #e66767;
-  cursor: pointer;
-  margin-top: 4px;
-  display: flex;
-  align-items: center;
-  font-size: 14px;
-
-  svg {
+    background: transparent;
+    border: none;
+    color: #e66767;
+    cursor: pointer;
+    margin-top: 4px;
+    display: flex;
+    align-items: center;
     font-size: 14px;
-  }
 
-  &:hover {
-    opacity: 0.8;
+    svg {
+      font-size: 14px;
+    }
+
+    &:hover {
+      opacity: 0.8;
+    }
   }
-}
 `
 
 export const Total = styled.div`

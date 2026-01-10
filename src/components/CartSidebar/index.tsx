@@ -51,7 +51,10 @@ const CartSidebar = ({ isOpen, onClose }: Props) => {
   }
 
   const formatCardNumber = (value: string) =>
-    value.replace(/\D/g, '').replace(/(\d{4})(?=\d)/g, '$1 ').trim()
+    value
+      .replace(/\D/g, '')
+      .replace(/(\d{4})(?=\d)/g, '$1 ')
+      .trim()
 
   const onlyDigits = (value: string, max: number) =>
     value.replace(/\D/g, '').slice(0, max)
@@ -222,7 +225,10 @@ const CartSidebar = ({ isOpen, onClose }: Props) => {
               onChange={(e) => updateDelivery('complement', e.target.value)}
             />
 
-            <Button disabled={!isDeliveryValid()} onClick={() => dispatch(changeStep('payment'))}>
+            <Button
+              disabled={!isDeliveryValid()}
+              onClick={() => dispatch(changeStep('payment'))}
+            >
               Continuar com o pagamento
             </Button>
 
@@ -295,9 +301,7 @@ const CartSidebar = ({ isOpen, onClose }: Props) => {
         {step === 'confirmation' && (
           <>
             <h3>Pedido realizado - #{orderId}</h3>
-            <p>
-              Seu pedido já está em preparação e será entregue em breve.
-            </p>
+            <p>Seu pedido já está em preparação e será entregue em breve.</p>
             <Button onClick={onClose}>Concluir</Button>
           </>
         )}
