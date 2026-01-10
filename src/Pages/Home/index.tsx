@@ -33,7 +33,7 @@ const promocoes: Food[] = [
     id: 3,
     title: 'La Dolce Vita Trattoria',
     description:
-      'A La Dolce Vita Trattoria leva a autêntica cozinha italiana até você! Desfrute de massas caseiras, pizzas deliciosas e risotos incríveis, tudo no conforto do seu lar.',
+      'A La Dolce Vita Trattoria leva a autêntica cozinha italiana até você! Desfrute de massas caseiras, pizzas deliciosos e risotos incríveis, tudo no conforto do seu lar.',
     system: 'Saiba Mais!',
     infos: ['Italiana'],
     image: macarrao,

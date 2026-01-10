@@ -6,7 +6,7 @@ class Food {
   infos: string[]
   system: string
   nota: number
-  preco: number // ✅ NOVO CAMPO
+  preco: number //NOVO CAMPO
 
   constructor(
     id: number,
@@ -16,7 +16,7 @@ class Food {
     infos: string[],
     system: string,
     nota: number,
-    preco: number // ✅ NOVO PARÂMETRO
+    preco: number //NOVO PARÂMETRO
   ) {
     this.id = id
     this.title = title
@@ -25,7 +25,7 @@ class Food {
     this.infos = infos
     this.system = system
     this.nota = nota
-    this.preco = preco // ✅ INICIALIZAÇÃO
+    this.preco = preco //INICIALIZAÇÃO
   }
 }
 
