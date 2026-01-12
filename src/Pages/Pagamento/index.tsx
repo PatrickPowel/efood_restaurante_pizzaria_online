@@ -21,7 +21,24 @@ const Pagamento = () => {
   }
 
   async function finalizarPedido() {
-    const entrega = JSON.parse(String(sessionStorage.getItem('dadosEntrega')))
+    if (
+      !cartao.numero ||
+      !cartao.nome ||
+      !cartao.vencimento ||
+      !cartao.cvv
+    ) {
+      alert('Preencha todos os dados do cartão')
+      return
+    }
+
+    const entrega = JSON.parse(
+      String(sessionStorage.getItem('dadosEntrega'))
+    )
+
+    if (!entrega) {
+      alert('Dados de entrega não encontrados')
+      return
+    }
 
     const body = {
       delivery: entrega,
@@ -40,9 +57,7 @@ const Pagamento = () => {
     const dados = await resposta.json()
 
     sessionStorage.setItem('pedidoConfirmado', JSON.stringify(dados))
-
     dispatch(clearCart())
-
     navigate('/confirmacao')
   }
 
@@ -53,11 +68,27 @@ const Pagamento = () => {
       <input
         name="numero"
         placeholder="Número do cartão"
+        value={cartao.numero}
         onChange={atualizar}
       />
-      <input name="nome" placeholder="Nome no cartão" onChange={atualizar} />
-      <input name="vencimento" placeholder="Vencimento" onChange={atualizar} />
-      <input name="cvv" placeholder="CVV" onChange={atualizar} />
+      <input
+        name="nome"
+        placeholder="Nome no cartão"
+        value={cartao.nome}
+        onChange={atualizar}
+      />
+      <input
+        name="vencimento"
+        placeholder="Vencimento"
+        value={cartao.vencimento}
+        onChange={atualizar}
+      />
+      <input
+        name="cvv"
+        placeholder="CVV"
+        value={cartao.cvv}
+        onChange={atualizar}
+      />
 
       <button className="btn-card" onClick={finalizarPedido}>
         Finalizar Pedido

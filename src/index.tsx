@@ -10,7 +10,7 @@ const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
 
 root.render(
   <React.StrictMode>
-    {/* 🔗 Redux Provider englobando todo o App */}
+    {/* Redux Provider englobando todo o App */}
     <Provider store={store}>
       <App />
     </Provider>

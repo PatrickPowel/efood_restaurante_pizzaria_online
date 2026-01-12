@@ -16,7 +16,11 @@ const Entrega = () => {
   }
 
   function continuar() {
-    // Salva dados no sessionStorage para a próxima tela
+    if (!dados.nome || !dados.endereco || !dados.cidade || !dados.cep) {
+      alert('Preencha todos os campos de entrega')
+      return
+    }
+
     sessionStorage.setItem('dadosEntrega', JSON.stringify(dados))
     navigate('/pagamento')
   }
@@ -25,10 +29,30 @@ const Entrega = () => {
     <div className="container">
       <h1>Entrega</h1>
 
-      <input name="nome" placeholder="Nome" onChange={atualizar} />
-      <input name="endereco" placeholder="Endereço" onChange={atualizar} />
-      <input name="cidade" placeholder="Cidade" onChange={atualizar} />
-      <input name="cep" placeholder="CEP" onChange={atualizar} />
+      <input
+        name="nome"
+        placeholder="Nome"
+        value={dados.nome}
+        onChange={atualizar}
+      />
+      <input
+        name="endereco"
+        placeholder="Endereço"
+        value={dados.endereco}
+        onChange={atualizar}
+      />
+      <input
+        name="cidade"
+        placeholder="Cidade"
+        value={dados.cidade}
+        onChange={atualizar}
+      />
+      <input
+        name="cep"
+        placeholder="CEP"
+        value={dados.cep}
+        onChange={atualizar}
+      />
 
       <button className="btn-card" onClick={continuar}>
         Concluir

@@ -33,7 +33,7 @@ const promocoes: Food[] = [
     id: 3,
     title: 'La Dolce Vita Trattoria',
     description:
-      'A La Dolce Vita Trattoria leva a autêntica cozinha italiana até você! Desfrute de massas caseiras, pizzas deliciosos e risotos incríveis, tudo no conforto do seu lar.',
+      'A La Dolce Vita Trattoria leva a autêntica cozinha italiana até você! Desfrute de massas caseiras, pizzas deliciosas e risotos incríveis, tudo no conforto do seu lar. Entrega rápida, pratos bem embalados e sabor inesquecível. Peça já!',
     system: 'Saiba Mais!',
     infos: ['Italiana'],
     image: macarrao,
@@ -44,7 +44,7 @@ const promocoes: Food[] = [
     id: 4,
     title: 'La Dolce Vita Trattoria',
     description:
-      'Cozinha italiana tradicional com massas artesanais e ingredientes selecionados. Qualidade e sabor garantidos.',
+      'A La Dolce Vita Trattoria leva a autêntica cozinha italiana até você! Desfrute de massas caseiras, pizzas deliciosas e risotos incríveis, tudo no conforto do seu lar. Entrega rápida, pratos bem embalados e sabor inesquecível. Peça já!',
     system: 'Saiba Mais!',
     infos: ['Italiana'],
     image: macarrao,
@@ -55,7 +55,7 @@ const promocoes: Food[] = [
     id: 5,
     title: 'La Dolce Vita Trattoria',
     description:
-      'Sabores autênticos da Itália entregues na sua casa com rapidez e carinho.',
+      'A La Dolce Vita Trattoria leva a autêntica cozinha italiana até você! Desfrute de massas caseiras, pizzas deliciosas e risotos incríveis, tudo no conforto do seu lar. Entrega rápida, pratos bem embalados e sabor inesquecível. Peça já!',
     system: 'Saiba Mais!',
     infos: ['Italiana'],
     image: macarrao,
@@ -66,7 +66,7 @@ const promocoes: Food[] = [
     id: 6,
     title: 'La Dolce Vita Trattoria',
     description:
-      'Massas, pizzas e risotos preparados com receitas tradicionais italianas.',
+      'A La Dolce Vita Trattoria leva a autêntica cozinha italiana até você! Desfrute de massas caseiras, pizzas deliciosas e risotos incríveis, tudo no conforto do seu lar. Entrega rápida, pratos bem embalados e sabor inesquecível. Peça já!',
     system: 'Saiba Mais!',
     infos: ['Italiana'],
     image: macarrao,
